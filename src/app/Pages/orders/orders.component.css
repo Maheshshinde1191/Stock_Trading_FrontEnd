@@ -1,0 +1,20 @@
+table {
+    border: 2px solid rgb(181, 181, 181);
+    border-radius: 1.5vh;
+}
+
+#order-container {
+    margin: 0 5vh;
+}
+
+.bg-completed {
+    background-color: rgb(80, 187, 148);
+}
+
+.bg-sell {
+    background-color: rgba(243, 78, 78, 0.875);
+}
+
+.bg-buy {
+    background-color: rgba(158, 234, 242, 0.875);
+}

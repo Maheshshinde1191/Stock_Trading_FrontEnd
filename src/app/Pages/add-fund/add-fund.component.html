@@ -1,0 +1,9 @@
+<div style="height: 100vh;">
+    <div class="container fund-body mt-5">
+        <form action="">
+            <input type="text" placeholder="Enter amount in &#8377;" class="fund" [formControl]="quantity">
+            <button class="btn btn-success fund-btn" type="submit" (click)="addFund()">Add fund</button>
+            <button class="btn btn-primary fund-btn" type="submit" (click)="withdrawFund()">Withdraw fund</button>
+        </form>
+    </div>
+</div>

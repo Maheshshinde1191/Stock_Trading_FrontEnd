@@ -1,0 +1,52 @@
+<div class="container holding">Holdings</div>
+<hr>
+<section style="height: 100vh;" class="holding-table">
+    <div id="holding-container">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Instrument</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Buying Price</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Curr.Val</th>
+                    <th scope="col">P&L</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let holding of arrHoldings">
+                <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{holding.companyId}}</td>
+                    <td>{{holding.quantity}}</td>
+                    <td>{{holding.buyPrice}}</td>
+                    <td>{{holding.currentPrice}}</td>
+                    <td>{{holding.currentPrice * holding.quantity}}</td>
+                    <td>{{(holding.currentPrice - holding.buyPrice) * holding.quantity}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="hol">
+    <div class="holding-info">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Total Investment</th>
+                    <th scope="col">Current Value</th>
+                    <th scope="col">Total P&L</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{totalInvestment}}</td>
+                    <td>{{currentValue}}</td>
+                    <td>{{profitLoss}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

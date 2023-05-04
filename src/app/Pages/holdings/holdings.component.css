@@ -1,0 +1,23 @@
+.holding {
+    font-size: 7vh;
+}
+
+.holding-table {
+    margin-top: 5vh;
+}
+
+.hol {
+    margin-top: 8vh;
+}
+
+#holding-container {
+    margin: 0 5vh;
+}
+
+.holding-info {
+    margin: 0 5vh;
+}
+
+.holding-info tbody td {
+    font-size: 5.5vh;
+}

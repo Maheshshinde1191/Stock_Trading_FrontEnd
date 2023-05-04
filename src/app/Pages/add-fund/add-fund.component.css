@@ -1,0 +1,19 @@
+.fund {
+    display: flex;
+    margin: 2% 1%;
+}
+
+.fund-body {
+    border: 2px solid gray;
+    border-radius: 1vh;
+    /* background-color: rgb(248, 227, 200); */
+}
+
+.fund-btn {
+    margin: 0 1%;
+    margin-bottom: 1%;
+}
+
+input {
+    border-radius: 1vh;
+}

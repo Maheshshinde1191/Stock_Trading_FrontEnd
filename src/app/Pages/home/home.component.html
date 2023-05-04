@@ -1,0 +1,134 @@
+<div style="height: 100vh;" class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col-5" style="background-color: honeydew;">
+            <form action="">
+                <input type="text" (input)="search()" placeholder="Search" class="w-100" [formControl]="searchText">
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan=3 class="table-primary">Company</th>
+                        <th scope="col" class="table-primary">Info</th>
+                        <th scope="col" class="table-primary">Change Percent</th>
+                        <th scope="col" class="table-primary">Stock Price</th>
+                        <th scope="col" class="table-primary">Stock Value Change</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let company of arrCompany" class="mt-3 mb-3">
+                    <tr>
+                    <td colspan=3>{{company.companyName}}</td>
+                    <td><button class="btn btn-info" (click)="changeCompanyId(company.id)">Info</button></td>
+                    <td style="text-align: end;">{{company.changePercent}}</td>
+                    <td style="text-align: end;">{{company.stockPrice}}</td>
+                    <td style="text-align: end;">{{company.stockValueChange}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+        </div>
+
+        <div class=" col-7" style="background-color: whitesmoke;">
+            <div class="row bg-primary pt-2 pb-2" style="color: honeydew;">
+                <div class="row">
+                    <span>Buy {{companyName}} <sub>NSE</sub> x 1 Qty</span>
+                </div>
+                <div class="row">
+                    <span><input type="radio" id="BSE"> BSE: $15.06 &nbsp;&nbsp;&nbsp; <input type="radio" checked
+                            id="NSE">
+                        NSE: $15.05</span>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <img style="height: 300px; width: 400px;"
+                        src="https://www.amcharts.com/wp-content/uploads/2019/10/demo_14593_none-7.png"
+                        alt="Failed To Load Image">
+                </div>
+                <div class="col">
+                    {{description}}
+
+                    <div class="row">
+                        <div class="col mt-4 mb-2">
+                            <form action="submit">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#buyModal">Buy Stocks</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="buyModalLabel">Buy Stocks</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="number" placeholder="1" [formControl]="quantity">
+                                                    </div>
+                                                    <div class="col">Price : {{price}}</div>
+                                                    <div class="col">Total : {{quantity.value * price}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                                    (click)="buyStock()">Buy</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col mt-4 mb-2">
+                            <form action="submit">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#sellModal">Sell Stocks</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="sellModal" tabindex="-1" aria-labelledby="sellModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="sellModalLabel">Sell</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="number" placeholder="1" [formControl]="quantity">
+                                                    </div>
+                                                    <div class="col">Price : {{price}}</div>
+                                                    <div class="col">Total : {{quantity.value * price}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                                    (click)="sellStock()">Sell</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
