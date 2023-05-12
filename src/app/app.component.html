@@ -1,34 +1,15 @@
-<!--Navbar Start-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <div>
-      <h3 style="float: left;">NIFTY 50 <span style="color: lightgreen; font-size: large;">16985.70</span> SENSEX <span
-          style="color: lightgreen; font-size: large;">57653.86</span></h3>
-    </div>
-    <a class="navbar-brand" href="#">Stock Trading System</a>
-    <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/holdings">Holdings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/orders">Orders</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/funds">Funds</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!--Navbar End-->
+<!-- <ng-container *ngIf="isLogin == true; then UserPanel; else loginPanel">
+</ng-container>
+<ng-template #UserPanel>
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+</ng-template>
 
+<ng-template #loginPanel>
+  <app-login></app-login>
+</ng-template> -->
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
-
 <!--Footer Start-->
 <footer style="float: bottom;" class="bg-light text-center text-white" >
 

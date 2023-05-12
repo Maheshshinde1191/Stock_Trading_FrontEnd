@@ -71,7 +71,6 @@ export class HomeComponent implements OnInit {
 
 
   search() {
-    console.log(this.searchText.value);
     const txt = this.searchText.value;
 
     if(!txt) {

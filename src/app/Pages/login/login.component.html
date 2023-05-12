@@ -1,0 +1,43 @@
+<div class="container" style="display: flex;justify-content: center;margin-top: 5%;">
+
+    <div class="main" style="background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);">  	
+        <input type="checkbox" id="chk" aria-hidden="true">
+        
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true" >Sign up</label>
+                
+                <input type="text" name="txt" placeholder="First Name">
+                
+                <input type="text" name="txt" placeholder="Last Name">
+                
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="signupObj.email">
+                
+                <input type="number" name="txt" placeholder="Mobile No.">
+
+                <input type="date" name="txt" placeholder="DOB">
+
+                <!-- <label for="gender" id="gender-label">Gender</label> -->
+                <select name="gender" id="gender" placeholder="Gender">
+                    <option value="" disabled selected hidden>Gender</option>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+                
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="signupObj.password">
+
+                <input type="password" name="cpswd" placeholder="Confirm Password">
+                <button (click)="onSignup()">Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" [(ngModel)]="loginObj.userName">
+                <input type="password" name="pswd" placeholder="Password" [(ngModel)]="loginObj.password">
+                <button (click)="onLogin()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

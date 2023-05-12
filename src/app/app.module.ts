@@ -16,6 +16,9 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { HttpClientModule } from "@angular/common/http";
 import { AddFundComponent } from './Pages/add-fund/add-fund.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { NavbarComponent } from './Pages/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { AddFundComponent } from './Pages/add-fund/add-fund.component';
     DashboardComponent,
     OrdersComponent,
     HoldingsComponent,
-    AddFundComponent
+    AddFundComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
